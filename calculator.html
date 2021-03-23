@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="calculator.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+      <div>
+        1st number:
+        <input type="text" v-model="number1" />
+      </div>
+      <div>
+        2nd number:
+        <input type="text" v-model="number2" />
+      </div>
+      <div>
+        3rd number:
+        <input type="text" v-model="number3" />
+      </div>
+      <br />
+      <div><button v-on:click="calculateSum()">Compute sum</button></div>
+      <p>The sum is: {{ sum }}</p>
+      <br />
+      <div><button v-on:click="calculateProduct()">Compute product</button></div>
+      <p>The product is: {{ product }}</p>
+
+      <h2>Additional Information</h2>
+      <button v-on:click="showInfo = !showInfo">Toggle to see more info about how this was calculated.</button>
+      <div v-if="showInfo">
+        <p>Your calculation was computed using vue.js.</p>
+      </div>
+      <!-- 
+      <h2>Want to get emails about new features?</h2>
+      <input type="checkbox" id="features" name="features" v-model="checkbox" />
+      <label for="features">Yes! Absolutely.</label>
+      <p v-if="features">You're going to love these emails.</p> -->
+      <br />
+      <br />
+      <div v-for="fruit in fruits">
+        <p>{{ fruit }}</p>
+      </div>
+
+      <input type="text" v-model="newFruit" />
+      <button v-on:click="addNewFruit()">Add a fruit!</button>
+    </div>
+  </body>
+</html>
