@@ -11,8 +11,10 @@
   </head>
   <body>
     <div id="app">
-      <button v-on:click="loadTodos()">Load Todo Data</button>
-      {{ todos }}
+      Title:
+      <input type="text" v-model="title" />
+      <button v-on:click="createTodo()">Create a new Todos!</button>
+      <div v-for="todo in todos">{{ todo }}</div>
     </div>
   </body>
 </html>
